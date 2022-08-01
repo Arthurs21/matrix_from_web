@@ -1,15 +1,16 @@
-a = input('Введите путь')
-f = open(a)
-sp = []
-sp_end = []
-value = 1
-for line in f:
-    if value % 2 == 0:
-        for i in line.split():
-            sp.append(i)
-    value += 1
-for j in sp:
-    if j != '|':
-        sp_end.append(j)
+import aiohttp
+import asyncio
 
-print(sp_end)
+url = 'https://raw.githubusercontent.com/Arthurs21/matrix_from_web/master/samples/sample1.txt'
+
+async with aiohttp.ClientSession() as session:
+    async with session.get(url) as response:
+        data = await response.text(encoding='utf-8')
+        status = response.status
+        print(status)
+
+
+if __name__ == '__main__':
+  loop = asyncio.get_event_loop()
+  loop.run_until_complete()
+  loop.close()
