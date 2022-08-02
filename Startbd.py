@@ -1,7 +1,7 @@
 import sqlite3
 import pytest
 
-conn = sqlite3.connect('Really_Good_db.db')
+conn = sqlite3.connect('D:/BD/Really_Good_db.db')
 cursor = conn.cursor()
 
 
