@@ -16,5 +16,4 @@ async def main():
             print(s)
 
 
-loop = asyncio.get_event_loop()
-loop.run_until_complete(main())
+asyncio.run(main())
