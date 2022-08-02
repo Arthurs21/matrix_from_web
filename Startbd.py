@@ -6,7 +6,7 @@ cursor = conn.cursor()
 
 
 def add_user(user_id: int, user_name: str):
-    cursor.execute('INSERT INTO test (user_id, user_name) VALUES (?)',
+    cursor.execute('INSERT INTO test (user_id, user_name) VALUES (?, ?)',
                    (user_id, user_name))
     conn.commit()
     
